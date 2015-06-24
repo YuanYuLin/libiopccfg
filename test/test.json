@@ -1,0 +1,10 @@
+{
+    "type":"cfg",
+    "version":"1.0.0",
+    "data_obj":{
+        "version":"0.0.1",
+    },
+    "data_array":[
+        "001", {"test": 10}
+    ]
+}
