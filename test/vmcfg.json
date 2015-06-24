@@ -1,0 +1,37 @@
+{
+    "type":"vmcfg",
+    "version":"1.0.0",
+    "vms":[
+/* vm00 */
+        {
+            "utsname":"vm00",
+            "rootfs":"/home/lxc/vm00/fs",
+            "tty":3,
+            "network":[
+            {"type":"veth", "flags":"up", "link":"br0", "hwaddr":"00:20:15:00:00:00", "method":"dhcp"},
+            {"type":"veth", "flags":"up", "link":"br1", "hwaddr":"00:20:15:00:00:10", "method":"static", "address":"10.1.1.1", "netmask":"255.255.255.0", "gateway":"10.1.1.254"},
+            ],
+            "kmsg":0,
+            "mount":[
+                {"entry":["/vms/cfg_vm00/www", "var/www", "none bind,optional,create=dir"]},
+                {"entry":["/vms/cfg_vm00/lighttpd/", "etc/lighttpd/", "none bind,optional,create=dir"]},
+                {"entry":["/vms/cfg_vm00/lighttpd/", "etc/lighttpd/", "none bind,optional,create=dir"]},
+            ],
+        },
+/* vm01*/
+        {
+            "utsname":"vm01",
+            "rootfs":"/home/lxc/vm01/fs",
+            "tty":2,
+            "network":[
+                {"type":"veth", "flags":"up", "link":"br0", "hwaddr":"00:20:15:00:00:01", "method":"dhcp"},
+                {"type":"veth", "flags":"up", "link":"br1", "hwaddr":"00:20:15:00:00:11", "method":"static"},
+            ],
+            "kmsg":0,
+            "mount":[
+                {"entry":["/vms/cfg_vm00/www", "var/www", "none bind,optional,create=dir"]},
+                {"entry":["/vms/cfg_vm00/lighttpd/", "etc/lighttpd/", "none bind,optional,create=dir"]},
+            ],
+        },
+    ]
+}
