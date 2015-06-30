@@ -15,5 +15,6 @@ struct query_json_obj_t {
 };
 
 void get_json_obj_by_query_obj(struct query_json_obj_t *query_json_obj, struct json_object *json_obj);
+void show_json(struct json_object *json_obj);
 
 #endif

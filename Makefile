@@ -10,6 +10,7 @@ LDFLAGS += -lc -lpthread
 LDFLAGS += -ljson-c
 
 SRC = 
-SRC += iopccfg.c
+SRC += show_cfg.c
+SRC += show_value.c
 
 include Makefile.include

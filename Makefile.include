@@ -1,4 +1,12 @@
+
+ifeq ($ARCH, arm)
 CROSS_COMPILE = arm-none-linux-gnueabi-
+endif
+
+ifeq ($ARCH, pc)
+CROSS_COMPILE = 
+endif 
+
 STRIP = $(CROSS_COMPILE)strip
 CC = $(CROSS_COMPILE)gcc
 
